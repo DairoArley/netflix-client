@@ -1,5 +1,6 @@
 import "./watch.scss"
 import { ArrowBackOutlined } from '@material-ui/icons'
+import nada from '../../video/BalladofBusterScruggs-SaloonScene.mp4'
 
 export default function Watch() {
   return (
@@ -8,7 +9,8 @@ export default function Watch() {
             <ArrowBackOutlined/>
             Home
         </div>
-        <video className="video" autoPlay progress controls src="https://stock.adobe.com/co/search/video?k=animals&asset_id=334515679"/>
+        <video className="video" autoPlay progress controls src={nada} >
+        </video>
         
     </div>
   )
