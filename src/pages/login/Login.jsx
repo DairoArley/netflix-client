@@ -15,10 +15,9 @@ export default function Login() {
                 <input type="email" placeholder="Email o numero telefonico"></input>  
                 <input type="password" placeholder="Password"></input>
                 <button >Sing In</button>
-                <span>Nuevo en Netflix? <b>Registrese pai.</b></span>
+                <span>Nuevo en Netflix? <b>Registrate.</b></span>
                 <small>
-                    This page is protected by Google reCAPTCHA to ensure you're not a
-                    bot. <b>Learn more</b>.
+                    Esta página está protegida por Google reCAPTCHA para asegurarnos que tú no eres un bot. <b>Learn more</b>.
                 </small>
             </form>            
         </div>        

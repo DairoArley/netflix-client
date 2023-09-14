@@ -1,6 +1,5 @@
 import "./watch.scss"
 import { ArrowBackOutlined } from '@material-ui/icons'
-import nada from '../../assets/video/BalladofBusterScruggs-SaloonScene.mp4'
 
 export default function Watch() {
   return (
