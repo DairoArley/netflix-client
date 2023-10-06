@@ -3,33 +3,21 @@ import Home from './pages/home/Home'
 import Watch from "./pages/watch/Watch"
 import Register from "./pages/register/Register"
 import Login from "./pages/login/Login"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
+
 
 function App() {
+  const user = true
   return (
     <Router>
-      <Switch>
-        <Route exact path="/">
-          {user ? <Home /> : <Redirect to="/register" />}
-        </Route>
-        <Route path="/register">
-          {!user ? <Register /> : <Redirect to="/" />}
-        </Route>
-        <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
-        {user && (
-          <>
-            <Route path="/movies">
-              <Home type="movie" />
-            </Route>
-            <Route path="/series">
-              <Home type="series" />
-            </Route>
-            <Route path="/watch">
-              <Watch />
-            </Route>
-          </>
-        )}
-      </Switch>
+      <Routes>
+        <Route exact path="/" element = {user? <Home/> : <Navigate to="/register"/> } />
+        <Route exact path="/movies" element={<Home type="movies"/>} />
+        <Route exact path="/series" element={<Home type="series"/>} />
+        <Route exact path="/watch" element={<Watch />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Register />} />      
+      </Routes>
     </Router>
   )
 }
