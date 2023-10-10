@@ -11,12 +11,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element = {user? <Home/> : <Navigate to="/register"/> } />
-        <Route exact path="/movies" element={<Home type="movies"/>} />
-        <Route exact path="/series" element={<Home type="series"/>} />
-        <Route exact path="/watch" element={<Watch />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />      
+        <Route exact path="/" element = {user? <Home/> : <Navigate to="/login"/> } />
+        {user && (<>
+          <Route exact path="/movies" element={<Home type="movies"/>} />
+          <Route exact path="/series" element={<Home type="series"/>} />
+          <Route exact path="/watch" element={<Watch />} />
+        </>)}
+        <Route exact path="/login" element = {!user? <Login/> : <Navigate to="/"/> }/>
+        <Route exact path="/register" element = {!user? <Register/> : <Navigate to="/"/> } />      
       </Routes>
     </Router>
   )
